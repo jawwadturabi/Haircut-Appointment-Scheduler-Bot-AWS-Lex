@@ -412,11 +412,6 @@ function dispatch(intentRequest, callback) {
                         callback(functions.elicitSlotSimple(sessionAttributes, content, intentName, slots, "Time"))
                     }
                     else {
-                        //             'content': `Thanks for being with us ${firstName}. Your reservation is updated with appointment type ${appointmentType} on ${date} at ${time}. We are looking forward to meet with you.\n\n
-                        // Note: Remember you do have 24 to 48 hours to cancel your appointment. Just type or speak "cancel".`
-                        //         }
-                        //     ));
-
                         let message = `Hey ${firstName}, Your Appointment has been successfully Updated with ${appointmentType} on ${date} at ${time} . We are very excited to see you.`;
                         sns.sendTextMessage(message, phoneNumber);
 
