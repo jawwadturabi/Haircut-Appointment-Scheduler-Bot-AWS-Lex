@@ -1,0 +1,27 @@
+{
+  "name": "appointment_scheduler_bot",
+  "version": "1.0.0",
+  "description": "This bot will book appointments for different types",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "configure": "aws configure",
+    "dozip": "@powershell Compress-Archive -Path /home/jawwad-turabi/Documents/AppointmentScheduler/index.js",
+    "delzip": "@powershell del index.zip",
+    "sendzip": "aws lambda update-function-code --function-name appointment-scheduler-bot --zip-file fileb://index.zip",
+    "deploy": "npm run delzip && npm run dozip && npm run sendzip",
+    "doziplinux": "zip -r index *",
+    "deploylinux": "npm run doziplinux && npm run sendzip",
+    "deploywindows": "npm run dozip && npm run sendzip",
+    "downloadzip_comment": "to download alexa code in zip",
+    "downloadzip": "aws lambda get-function --function-name appointment-scheduler-bot"
+  },
+  "author": "Muhammad Jawwad Turabi",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.674.0",
+    "datejs": "^1.0.0-rc3",
+    "deasync": "^0.1.20",
+    "dotenv": "^8.2.0"
+  }
+}
