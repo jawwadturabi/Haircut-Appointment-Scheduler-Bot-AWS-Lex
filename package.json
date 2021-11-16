@@ -19,7 +19,7 @@
   "author": "Muhammad Jawwad Turabi",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.674.0",
+    "aws-sdk": "^2.814.0",
     "datejs": "^1.0.0-rc3",
     "deasync": "^0.1.20",
     "dotenv": "^8.2.0"
